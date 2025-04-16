@@ -17,6 +17,8 @@ export const router = createBrowserRouter([
       {
         index: true,
         path: "/",
+        // 6.1 fetching the data using loader. As i want to show the data in Home page so go to the Home component
+        loader: () => fetch("/public/booksData.json"),
         Component: Home,
       },
     ],
