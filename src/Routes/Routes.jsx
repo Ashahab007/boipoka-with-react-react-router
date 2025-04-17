@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../components/Home/Home";
 import About from "../components/About/About";
 import BookDetails from "../components/BookDetails/BookDetails";
+import ReadList from "../pages/ReadList/ReadList";
 
 // 1.2 the router from documentation is defined here and export it and also import createBrowserRouter
 export const router = createBrowserRouter([
@@ -34,6 +35,13 @@ export const router = createBrowserRouter([
         // 9.2 use loader to fetch the data to use in useLoaderDta() for compare with useParam() data.
         loader: () => fetch("/public/booksData.json"),
         Component: BookDetails,
+      },
+      // 11.2 set the ReadList in routes
+      {
+        path: "readlist",
+        // 11.3 As we want to compare with the localStorage so first fetch the all data using loader
+        loader: () => fetch("/public/booksData.json"),
+        Component: ReadList,
       },
     ],
   },

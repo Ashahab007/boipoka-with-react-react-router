@@ -19,7 +19,8 @@ const BookDetails = () => {
   //   9.5 use array find to get the specific book data to show
   const singleBook = data.find((book) => book.bookId === bookId);
   console.log(singleBook);
-  //   9.6 destructured the found object
+
+  //   9.6 destructured the found singleBook
   const {
     bookName,
     author,

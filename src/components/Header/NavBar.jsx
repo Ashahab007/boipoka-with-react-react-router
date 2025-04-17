@@ -12,6 +12,10 @@ const NavBar = () => {
       <NavLink to="/about">
         <li className="m-4">About</li>
       </NavLink>
+      {/* 11.5 created the button Read List */}
+      <NavLink to="/readlist">
+        <li className="m-4">Read List</li>
+      </NavLink>
     </>
   );
   return (

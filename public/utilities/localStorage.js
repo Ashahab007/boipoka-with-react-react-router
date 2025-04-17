@@ -22,5 +22,5 @@ const addItemsToLS = (id) => {
   }
 };
 
-// 10.7 export
-export { addItemsToLS };
+// 10.7, 11.6 export
+export { addItemsToLS, getItemsFromDB };
