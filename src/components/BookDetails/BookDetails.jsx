@@ -1,5 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+// 10.8 import
+import { addItemsToLS } from "../../../public/utilities/localStorage";
 
 const BookDetails = () => {
   // 9.1 as we want to show the specific book details so we want to find that book by comparing two id's. First id, is get by useParams which is automatically get by dynamic path id.
@@ -31,6 +33,12 @@ const BookDetails = () => {
     image,
   } = singleBook;
 
+  //   10.1 save the data to the localStorage
+  const handleMarkAsRead = (id) => {
+    // 10.5 get the id from onCLick
+    addItemsToLS(id);
+  };
+
   return (
     <div className="flex w-10/12 mx-auto border">
       <div className="px-2 py-12 w-3/6 h-5/6">
@@ -60,8 +68,16 @@ const BookDetails = () => {
         <br />
         <p>Rating: {rating}</p>
         <div>
-          <button className="btn btn-active btn-accent ">Accent</button>
-          <button className="btn btn-active btn-info ml-4">Info</button>
+          <button
+            //   10.2 set the handleMarkAsRead to get the id
+            onClick={() => handleMarkAsRead(id)}
+            className="btn btn-active btn-accent"
+          >
+            Mark as Read
+          </button>
+          <button className="btn btn-active btn-info ml-4">
+            Add to Wishlist
+          </button>
         </div>
       </div>
     </div>
