@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Banner from "../Banner/Banner";
 import Books from "../../pages/Books/Books";
 import { useLoaderData } from "react-router";
@@ -15,9 +15,13 @@ const Home = () => {
       <Banner></Banner>
       {/* 5.2 apply the Books component in Home component */}
       {/* 6.2  */}
-      {data.map((singleBook) => (
-        <Book singleBook={singleBook}></Book>
-      ))}
+      <Suspense fallback={<span>Loading . ...</span>}>
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mt-7">
+          {data.map((singleBook) => (
+            <Book singleBook={singleBook} key={singleBook.bookId}></Book>
+          ))}
+        </div>
+      </Suspense>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import "./index.css";
 
 import { RouterProvider } from "react-router";
 
-// 1.3 Now import the router
+// 1.3 Now import the router from Routes
 import { router } from "./Routes/Routes";
 
 // 1.4 passed the router as props in RouterProvider for rendering
