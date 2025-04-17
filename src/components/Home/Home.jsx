@@ -10,7 +10,7 @@ const Home = () => {
   console.log(data);
 
   return (
-    // 4.3 apply the banner component in Home component as we want to show the banner as default
+    // 4.3 apply the banner component in Home component as we want to show the banner as default in Home
     <div>
       <Banner></Banner>
       {/* 5.2 apply the Books component in Home component */}

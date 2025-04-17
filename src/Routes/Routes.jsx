@@ -31,6 +31,8 @@ export const router = createBrowserRouter([
       {
         // 8.1 As we want to show the details of the book. To grab the specific details of the book we need it dynamically. here, we show the  details of specific book by grabbing the id dynamically using (:) which is a react router dynamic symbol
         path: "bookdetails/:id",
+        // 9.2 use loader to fetch the data to use in useLoaderDta() for compare with useParam() data.
+        loader: () => fetch("/public/booksData.json"),
         Component: BookDetails,
       },
     ],
