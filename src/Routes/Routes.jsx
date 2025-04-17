@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router";
 import Root from "../pages/Root/Root";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../components/Home/Home";
+import About from "../components/About/About";
+import BookDetails from "../components/BookDetails/BookDetails";
 
 // 1.2 the router from documentation is defined here and export it and also import createBrowserRouter
 export const router = createBrowserRouter([
@@ -20,6 +22,16 @@ export const router = createBrowserRouter([
         // 6.1 fetching the data using loader. As i want to show the data in Home page so go to the Home component
         loader: () => fetch("/public/booksData.json"),
         Component: Home,
+      },
+      // 7.1 creating about page and component
+      {
+        path: "about",
+        Component: About,
+      },
+      {
+        // 8.1 As we want to show the details of the book. To grab the specific details of the book we need it dynamically. here, we show the  details of specific book by grabbing the id dynamically using (:) which is a react router dynamic symbol
+        path: "bookdetails/:id",
+        Component: BookDetails,
       },
     ],
   },

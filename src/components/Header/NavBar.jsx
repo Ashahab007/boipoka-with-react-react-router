@@ -1,11 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 // 3.1 Implement the navbar from daisy and customized it
 const NavBar = () => {
   const links = (
     <>
-      <li className="m-4">Home </li>
-      <li className="m-4">About</li>
+      {/* 7.2 applied navigation in Home and About navbar using NavLink */}
+      <NavLink to="/">
+        <li className="m-4">Home </li>
+      </NavLink>
+      <NavLink to="/about">
+        <li className="m-4">About</li>
+      </NavLink>
     </>
   );
   return (
