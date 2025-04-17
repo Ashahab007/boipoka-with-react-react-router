@@ -45,7 +45,7 @@ const ReadList = () => {
       <TabPanel>
         {/* 11.12 use the state */}
         <h2>My Read List: {readList.length} </h2>
-        {/* 11.13 now show the books in read list by passing in Book component in singleBook key, here, singleBook is previously defined Book's Props in Book component */}
+        {/* 11.13 now show the books in read list by passing in Book component in singleBook key, here, singleBook is previously defined Book's Props in Book component or you can create another component to show the wishlist */}
         <div>
           {readList.map((b) => (
             <Book singleBook={b}></Book>
