@@ -34,14 +34,45 @@ const ReadList = () => {
     setReadList(readListedBook);
   }, [data]);
 
+  //   12.4 defining state to set the sort type
+  const [sortType, setSortType] = useState("");
+  // 12.2 create the handleSortBy function and receive the sortType
+  const handleSortBy = (sortType) => {
+    console.log(sortType);
+    if (sortType === "year") {
+      const sortByYear = readList.sort(
+        (a, b) => a.yearOfPublishing - b.yearOfPublishing
+      );
+      setReadList(sortByYear);
+    }
+    if (sortType === "ratings") {
+      const sortByRatings = readList.sort((a, b) => a.rating - b.rating);
+      setReadList(sortByRatings);
+    }
+    setSortType(sortType);
+  };
   //   11.9 use the table
   return (
     <Tabs>
+      <details className="dropdown">
+        <summary className="btn m-1">
+          Sort By: {sortType ? sortType : ""}
+        </summary>
+        <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+          {/* 12.1 sort the wish list items so created sort by button*/}
+          {/* 12.3 get the sort type by passing the parameter in  handleSortBy function*/}
+          <li onClick={() => handleSortBy("year")}>
+            <a>Year</a>
+          </li>
+          <li onClick={() => handleSortBy("ratings")}>
+            <a>Ratings</a>
+          </li>
+        </ul>
+      </details>
       <TabList>
         <Tab>Read List</Tab>
         <Tab>Wish List</Tab>
       </TabList>
-
       <TabPanel>
         {/* 11.12 use the state */}
         <h2>My Read List: {readList.length} </h2>

@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 // 6.3 show the each book in UI
 const Book = ({ singleBook }) => {
-  console.log(singleBook);
+  // console.log(singleBook);
   const {
     bookId,
     author,
